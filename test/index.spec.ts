@@ -1,13 +1,13 @@
-import { myPackage } from "../src";
+import { init } from "../src";
+import { ProviderUploadAzureStorage } from "../src/ProviderUploadAzureStorage";
 
 describe("index", () => {
-    describe("myPackage", () => {
-        it("should return a string containing the message", () => {
-            const message = "Hello";
+    describe("init", () => {
+        it("should return an instance", () => {
+            const mockOptions = {};
+            const instance = init(mockOptions);
 
-            const result = myPackage(message);
-
-            expect(result).toMatch(message);
+            expect(instance).toBeInstanceOf(ProviderUploadAzureStorage);
         });
     });
 });
